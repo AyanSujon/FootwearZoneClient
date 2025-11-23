@@ -1,21 +1,56 @@
-const newArrivals = [
-  { name: "Sporty Sneakers", price: "$89", img: "/images/new1.jpg" },
-  { name: "Elegant Loafers", price: "$110", img: "/images/new2.jpg" },
-  { name: "Kids Running Shoes", price: "$50", img: "/images/new3.jpg" },
-];
+// app/components/BestSellersServer.jsx
+import { Eye } from "lucide-react";
 
-export default function NewArrivals() {
+// Server Component
+export default async function BestSellersServer() {
+  // Fetch best seller products from your API
+  const res = await fetch("http://localhost:4000/api/products/new-arrivals", {
+    cache: "no-store", // ensures fresh data on each request
+  });
+
+  const products = await res.json();
+
   return (
     <section className="py-12 container mx-auto">
       <h2 className="text-3xl font-bold mb-8 text-center">New Arrivals</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {newArrivals.map((item) => (
-          <div key={item.name} className="card bg-base-100 shadow hover:shadow-lg transition">
-            <figure><img src={item.img} alt={item.name} className="rounded-lg" /></figure>
-            <div className="card-body items-center text-center">
-              <h3 className="card-title">{item.name}</h3>
-              <p className="text-lg font-semibold">{item.price}</p>
-              <button className="btn btn-primary mt-2">Add to Cart</button>
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {products.map((p) => (
+          <div
+            key={p.title}
+            className="card bg-base-100 shadow hover:shadow-lg transition flex flex-col"
+          >
+            <figure className="relative overflow-hidden">
+              <img
+                src={p.image}
+                alt={p.title}
+                className="rounded-lg w-full h-48 object-cover transform transition-transform duration-500 hover:scale-110"
+              />
+              {p.bestSeller && (
+                <span className="absolute bottom-2 right-2 bg-green-500 text-white text-xs font-semibold px-2 py-1 rounded">
+                  New
+                </span>
+              )}
+            </figure>
+
+            <div className="card-body flex-1 flex flex-col items-center text-center">
+              <h3 className="card-title">{p.title}</h3>
+              <p className="text-sm text-gray-500">{p.category}</p>
+              <div className="flex items-center justify-center mt-1 gap-2">
+                <span className="text-lg font-bold">${p.price}</span>
+                {p.discount && (
+                  <span className="text-sm text-red-500 font-semibold">
+                    {p.discount}
+                  </span>
+                )}
+              </div>
+              <p className="text-yellow-400 mt-1">{p.rating} ★</p>
+
+              <div className="mt-auto flex flex-col sm:flex-row gap-2 w-full">
+                <button className="btn btn-primary btn-sm flex-1">Add to Cart</button>
+                <button className="btn btn-outline btn-sm flex-1 flex items-center justify-center gap-1">
+                  <Eye size={16} /> View Details
+                </button>
+              </div>
             </div>
           </div>
         ))}
