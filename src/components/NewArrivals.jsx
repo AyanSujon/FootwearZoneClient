@@ -1,5 +1,6 @@
 // app/components/BestSellersServer.jsx
 import { Eye } from "lucide-react";
+import Link from "next/link";
 
 // Server Component
 export default async function BestSellersServer() {
@@ -47,9 +48,14 @@ export default async function BestSellersServer() {
 
               <div className="mt-auto flex flex-col sm:flex-row gap-2 w-full">
                 <button className="btn btn-primary btn-sm flex-1">Add to Cart</button>
-                <button className="btn btn-outline btn-sm flex-1 flex items-center justify-center gap-1">
+
+                
+                <Link href={`/shop/${p._id}`} className="btn btn-outline btn-sm flex-1 flex items-center justify-center gap-1">
                   <Eye size={16} /> View Details
-                </button>
+                </Link>
+                {/* <button className="btn btn-outline btn-sm flex-1 flex items-center justify-center gap-1">
+                  <Eye size={16} /> View Details
+                </button> */}
               </div>
             </div>
           </div>

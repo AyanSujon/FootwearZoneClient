@@ -4,17 +4,6 @@ import React, { useState } from "react";
 import { Heart, Star, Eye } from "lucide-react";
 import Link from "next/link";
 
-// const product = {
-//   title: "Reebok Royal Classic Jogger",
-//   image: "https://i.ibb.co/PZBD6Cmp/Reebok-Royal-Classic-Jogger.png",
-//   category: "Kids",
-//   sizes: [2, 3, 4, 5],
-//   price: 65,
-//   color: ["Black", "Blue"],
-//   discount: "15% OFF",
-//   rating: 4.5,
-// };
-
 export default function ProductCard({ product }) {
   console.log(product)
   const [selectedSize, setSelectedSize] = useState(null);
@@ -120,11 +109,15 @@ export default function ProductCard({ product }) {
         {/* Row 6: Buttons */}
         <div className="mt-4 flex gap-2">
           <button className="btn btn-primary btn-xs flex-1">Add to Cart</button>
+          <Link className="btn btn-outline btn-xs flex items-center gap-1 flex-1" href={`/shop/${product._id}`}>
 
+            <Eye size={14} />View
+          </Link>
+          {/* 
           <button className="btn btn-outline btn-xs flex items-center gap-1 flex-1">
             <Eye size={14} />
             View
-          </button>
+          </button> */}
         </div>
 
       </div>
