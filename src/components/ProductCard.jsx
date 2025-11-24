@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { Heart, Star, Eye } from "lucide-react";
+import Link from "next/link";
 
 // const product = {
 //   title: "Reebok Royal Classic Jogger",
@@ -14,8 +15,8 @@ import { Heart, Star, Eye } from "lucide-react";
 //   rating: 4.5,
 // };
 
-export default function ProductCard({product}) {
-    console.log(product)
+export default function ProductCard({ product }) {
+  console.log(product)
   const [selectedSize, setSelectedSize] = useState(null);
   const [selectedColor, setSelectedColor] = useState(null);
   const [wishlist, setWishlist] = useState(false);
@@ -46,9 +47,8 @@ export default function ProductCard({product}) {
         >
           <Heart
             size={18}
-            className={`transition duration-300 ${
-              wishlist ? "text-red-500 fill-red-500" : "text-gray-700"
-            }`}
+            className={`transition duration-300 ${wishlist ? "text-red-500 fill-red-500" : "text-gray-700"
+              }`}
           />
         </button>
       </div>
@@ -64,6 +64,12 @@ export default function ProductCard({product}) {
           <p className="text-xs text-gray-500">{product.category}</p>
           <p className="text-base font-bold text-gray-900">${product.price}</p>
         </div>
+        {/* description short */}
+        <div className="text-[12px] text-gray-600 mt-1">
+          {product.description.length > 50
+            ? product.description.slice(0, 50) + "..."
+            : product.description}
+        </div>
 
         {/* Row 4: Sizes */}
         <div className="mt-3">
@@ -74,10 +80,9 @@ export default function ProductCard({product}) {
                 key={size}
                 onClick={() => setSelectedSize(size)}
                 className={`px-2 py-[3px] text-[11px] rounded transition
-                  ${
-                    selectedSize === size
-                      ? "bg-black text-white"
-                      : "bg-gray-100 hover:bg-gray-200"
+                  ${selectedSize === size
+                    ? "bg-black text-white"
+                    : "bg-gray-100 hover:bg-gray-200"
                   }`}
               >
                 {size}
@@ -88,7 +93,7 @@ export default function ProductCard({product}) {
 
         {/* Row 5: Rating + Colors */}
         <div className="flex justify-between items-center mt-3">
-          
+
           {/* Rating */}
           <div className="flex items-center gap-1 text-yellow-500 text-sm">
             <Star size={15} fill="currentColor" />
@@ -102,10 +107,9 @@ export default function ProductCard({product}) {
                 key={c}
                 onClick={() => setSelectedColor(c)}
                 className={`w-4 h-4 rounded-full border cursor-pointer transition
-                  ${
-                    selectedColor === c
-                      ? "ring-2 ring-black"
-                      : "border-gray-300"
+                  ${selectedColor === c
+                    ? "ring-2 ring-black"
+                    : "border-gray-300"
                   }`}
                 style={{ backgroundColor: c.toLowerCase() }}
               />
