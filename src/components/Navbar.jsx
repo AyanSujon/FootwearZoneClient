@@ -12,6 +12,8 @@ export default function Navbar() {
         <li><Link href="/men" className="hover:text-primary transition">Men</Link></li>
         <li><Link href="/women" className="hover:text-primary transition">Women</Link></li>
         <li><Link href="/kids" className="hover:text-primary transition">Kids</Link></li>
+        <li><Link href="/productmanage" className="hover:text-primary transition">Manage Products</Link></li>
+        <li><Link href="/addProduct" className="hover:text-primary transition">Add Products</Link></li>
 
     </>
 
