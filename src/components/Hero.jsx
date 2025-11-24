@@ -1,16 +1,3 @@
-// export default function Hero() {
-//   return (
-//     <section className="hero min-h-screen bg-base-200">
-//       <div className="hero-content text-center">
-//         <div className="max-w-lg">
-//           <h1 className="text-5xl font-bold">Step Into Comfort and Style</h1>
-//           <p className="py-6">Trendy shoes for Men, Women & Kids. Find your perfect pair today!</p>
-//           <a href="/shop" className="btn btn-primary">Shop Now</a>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
 
 
 "use client";
@@ -23,8 +10,7 @@ import { Pagination } from "swiper/modules";
 import Link from "next/link";
 
 // Brand Colors
-const brandColor = "#422ad5"; // Example brand color (change as needed)
-const brandDark = "#422ad5";
+const brandColor = "#422ad5";
 
 export default function Hero() {
   const slides = [
@@ -41,7 +27,6 @@ export default function Hero() {
       cta: "Shop Men's Shoes",
       bg: "https://i.ibb.co.com/0yxKsdwf/Trendy-Footwear-for-Modern-Men.png",
       link: "/men"
-
     },
     {
       headline: "Walk with Confidence & Elegance",
@@ -63,7 +48,7 @@ export default function Hero() {
       cta: "Shop New Arrivals",
       bg: "https://i.ibb.co.com/8gmjhxXn/Discover-the-Latest-Footwear-Trends.webp",
       link: "/shop"
-    },
+    }
   ];
 
   return (
@@ -71,7 +56,7 @@ export default function Hero() {
       <Swiper
         pagination={{ dynamicBullets: true }}
         modules={[Pagination]}
-        className="w-full h-full"
+        className="w-full h-full custom-swiper"
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
@@ -93,7 +78,7 @@ export default function Hero() {
 
                 <Link
                   href={slide.link}
-                  className="inline-block px-8 py-3 text-lg font-semibold rounded-full bg-primary"
+                  className="inline-block px-8 py-3 text-lg font-semibold rounded-full"
                   style={{ backgroundColor: brandColor }}
                 >
                   {slide.cta}
@@ -103,18 +88,6 @@ export default function Hero() {
           </SwiperSlide>
         ))}
       </Swiper>
-
-      <style jsx global>{`
-        .swiper-pagination-bullet-active {
-          background: ${brandColor} !important;
-        }
-        .swiper-pagination-bullet {
-          width: 10px;
-          height: 10px;
-          background: ${brandDark};
-          opacity: 0.6;
-        }
-      `}</style>
     </div>
   );
 }
