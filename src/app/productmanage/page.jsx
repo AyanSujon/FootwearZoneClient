@@ -41,7 +41,7 @@ export default function Page() {
 
 
 
-    if (!user) return null; // already redirected
+    if (!user) return null; 
 
 
 
@@ -52,8 +52,8 @@ export default function Page() {
             text: "Do you want to delete this product permanently?",
             icon: 'warning',
             showCancelButton: true,
-            confirmButtonColor: '#1E40AF', // your brand color
-            cancelButtonColor: '#EF4444',  // red for cancel
+            confirmButtonColor: '#1E40AF', 
+            cancelButtonColor: '#EF4444', 
             confirmButtonText: 'Yes, delete it!',
             cancelButtonText: 'Cancel'
         });
