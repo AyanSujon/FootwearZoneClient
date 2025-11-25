@@ -226,7 +226,7 @@ const Register = () => {
                 // signOutUser();
                 // setUser(null);
                 toast.success("Signin with Google Successfull!");
-                    
+                    router.push("/");
 
             })
             .catch((error) => {
