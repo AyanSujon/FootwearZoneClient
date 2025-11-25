@@ -11,7 +11,7 @@ export default function Footer() {
         {/* Brand */}
         <div className="space-y-3">
           <h2 className="text-3xl font-bold tracking-wide">
-            Footwear<span className="text-primary">Zone</span>
+            Foot<span className="text-primary">Wear</span>
           </h2>
           <p className="text-sm leading-relaxed">
             Premium shoes designed for comfort, performance, and style.  
@@ -76,7 +76,7 @@ export default function Footer() {
 
       {/* Bottom Footer */}
       <div className="text-center mt-10 pt-5 text-sm opacity-70">
-        © {new Date().getFullYear()} FootwearZoon — All rights reserved.
+        © {new Date().getFullYear()} Footwear — All rights reserved.
       </div>
     </footer>
   );
