@@ -3,10 +3,15 @@
 
 "use client";
 
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { toast } from "react-toastify";
+import { AuthContext } from '@/Context/AuthContext';
+import { useRouter } from "next/navigation";
 
 export default function AddProductForm() {
+  const { user } = useContext(AuthContext);
+  console.log(user);
+  const router = useRouter();
   const [product, setProduct] = useState({
     title: "",
     image: "",
@@ -29,6 +34,19 @@ export default function AddProductForm() {
     wishlistedCount: 0,
   });
 
+
+    // Redirect before showing the UI
+    useEffect(() => {
+        if (!user) {
+            router.replace("/login");
+        }
+    }, [user, router]);
+
+    // Don't render the page until user exists
+    if (!user) return null;
+
+
+
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
 
@@ -42,16 +60,6 @@ export default function AddProductForm() {
       setProduct({ ...product, [name]: value });
     }
   };
-
-  //   const handleSubmit = (e) => {
-  //     e.preventDefault();
-  //     console.log("Product Data:", product);
-  //     // send to backend API
-  //         // Show test toast message
-  //     toast.success("Product submitted successfully!");
-  //   };
-
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();

@@ -19,8 +19,9 @@ const Login = () => {
     const [show, setShow] = useState(false);
     const [errors, setErrors] = useState({});
     const { signInWithGoogle, setLoading, setUser, loginUser, loading } = useContext(AuthContext);
-      const router = useRouter();
+    const router = useRouter();
 
+        
 
 
     //  All Validation Patterns
@@ -138,6 +139,7 @@ const Login = () => {
                 setUser(newUser);
                 toast.success("Login with Google Successfull!");
                 router.push("/");
+                
 
             })
             .catch((error) => {

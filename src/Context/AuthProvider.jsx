@@ -1,9 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-// import { AuthContext } from './AuthContext';
 import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
-// import { auth } from '../firebase/firebase.config';
 import { useEffect } from 'react';
 import { auth } from '@/firebase/firebase.config';
 import { AuthContext } from './AuthContext';
@@ -79,10 +77,6 @@ const AuthProvider = ({ children }) => {
         loginUser,
         signInWithGoogle,
         signOutUser,
-
-
-
-
 
     };
 

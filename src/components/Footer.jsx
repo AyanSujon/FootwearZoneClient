@@ -37,10 +37,10 @@ export default function Footer() {
           <h3 className="footer-title text-lg font-semibold mb-3">Quick Links</h3>
           <ul className="space-y-2 text-sm">
             <li><Link href={"/"} className="link link-hover">Home</Link></li>
-            <li><Link href={"/"} className="link link-hover">Shop</Link></li>
-            <li><Link href={"/"} className="link link-hover">Men's Shoes</Link></li>
-            <li><Link href={"/"} className="link link-hover">Women's Shoes</Link></li>
-            <li><Link href={"/"} className="link link-hover">Kids</Link></li>
+            <li><Link href={"/shop"} className="link link-hover">Shop</Link></li>
+            <li><Link href={"/men"} className="link link-hover">Men's Shoes</Link></li>
+            <li><Link href={"/women"} className="link link-hover">Women's Shoes</Link></li>
+            <li><Link href={"/kids"} className="link link-hover">Kids</Link></li>
           </ul>
         </div>
 

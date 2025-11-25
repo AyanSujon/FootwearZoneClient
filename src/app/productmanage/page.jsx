@@ -4,13 +4,29 @@
 
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Eye, Trash, Star } from "lucide-react";
+import { AuthContext } from '@/Context/AuthContext';
+import { useRouter } from "next/navigation";
 
 export default function Page() {
+    const { user } = useContext(AuthContext);
     const [products, setProducts] = useState([]);
+    const router = useRouter();
+
+    // Redirect before showing the UI
+    useEffect(() => {
+        if (!user) {
+            router.replace("/login");
+        }
+    }, [user, router]);
+
+    // Don't render the page until user exists
+    if (!user) return null;
 
     useEffect(() => {
+
+
         const fetchProducts = async () => {
             try {
                 const res = await fetch("http://localhost:4000/api/products");
