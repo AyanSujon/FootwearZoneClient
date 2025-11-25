@@ -8,24 +8,24 @@ import { useState, useEffect, useContext } from "react";
 import { Eye, Trash, Star } from "lucide-react";
 import { AuthContext } from '@/Context/AuthContext';
 import { useRouter } from "next/navigation";
+import Swal from "sweetalert2";
+
+
 
 export default function Page() {
-    const { user } = useContext(AuthContext);
+    const { user, loading } = useContext(AuthContext);
     const [products, setProducts] = useState([]);
     const router = useRouter();
-
-    // Redirect before showing the UI
+    // Redirect safely after knowing user status
     useEffect(() => {
-        if (!user) {
+        if (!loading && !user) {
             router.replace("/login");
         }
-    }, [user, router]);
+    }, [user, loading, router]);
 
-    // Don't render the page until user exists
-    if (!user) return null;
+
 
     useEffect(() => {
-
 
         const fetchProducts = async () => {
             try {
@@ -39,9 +39,65 @@ export default function Page() {
         fetchProducts();
     }, []);
 
-    const handleDelete = (id) => {
-        setProducts(products.filter((product) => product._id !== id));
+
+
+    if (!user) return null; // already redirected
+
+
+
+
+    const handleDelete = async (id) => {
+        const result = await Swal.fire({
+            title: 'Are you sure?',
+            text: "Do you want to delete this product permanently?",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#1E40AF', // your brand color
+            cancelButtonColor: '#EF4444',  // red for cancel
+            confirmButtonText: 'Yes, delete it!',
+            cancelButtonText: 'Cancel'
+        });
+
+        if (result.isConfirmed) {
+            try {
+                const res = await fetch(`http://localhost:4000/api/products/${id}`, {
+                    method: "DELETE",
+                });
+
+                if (!res.ok) {
+                    return Swal.fire({
+                        icon: 'error',
+                        title: 'Failed',
+                        text: 'Could not delete the product.',
+                        confirmButtonColor: '#1E40AF',
+                    });
+                }
+
+                // Remove from UI
+                setProducts(products.filter((product) => product._id.toString() !== id));
+
+                MySwal.fire({
+                    icon: 'success',
+                    title: 'Deleted!',
+                    text: 'Your product has been deleted.',
+                    confirmButtonColor: '#1E40AF',
+                });
+            } catch (error) {
+                console.error("Delete error:", error);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error!',
+                    text: 'Something went wrong.',
+                    confirmButtonColor: '#1E40AF',
+                });
+            }
+        }
     };
+
+
+
+
+
 
     return (
         <div className="p-6">
