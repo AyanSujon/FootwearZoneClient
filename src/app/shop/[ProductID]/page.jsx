@@ -1,5 +1,7 @@
 // export default async function SingleProduct(props) {
 
+
+
 //   const { ProductID } = await props.params; 
 
 //   const res = await fetch(`http://localhost:4000/api/products/${ProductID}`, {
@@ -29,7 +31,8 @@
 
 
 
-
+import { ArrowLeft } from "lucide-react";
+import Link from "next/link";
 
 export default async function SingleProduct(props) {
   const { ProductID } = await props.params;
@@ -41,7 +44,12 @@ export default async function SingleProduct(props) {
   const product = await res.json();
 
   return (
-    <div className="max-w-7xl mx-auto p-6 grid grid-cols-1 md:grid-cols-2 gap-10">
+    <div>
+      <div className="container">
+        <Link href={"/shop"} className="btn w-40 my-5 hover:btn-primary ml-15"> <ArrowLeft /> Back</Link>
+      </div>
+
+          <div className="container mx-auto p-6 grid grid-cols-1 md:grid-cols-2 gap-10">
       
       {/* LEFT IMAGE */}
       <div className="relative flex justify-center items-center group">
@@ -157,6 +165,7 @@ export default async function SingleProduct(props) {
           Add to Cart
         </button>
       </div>
+    </div>
     </div>
   );
 }
