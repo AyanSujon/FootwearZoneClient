@@ -1,13 +1,4 @@
 
-- 
-- Live link: https://footwear-zone-client.vercel.app/
-- api link: https://footwear-api-six.vercel.app/ 
-- client side Repo: https://github.com/AyanSujon/FootwearZoneClient.git
-- https://github.com/AyanSujon/FootwearZoneServer.git
-
-
-
-
 
 # Footwear Zone
 
