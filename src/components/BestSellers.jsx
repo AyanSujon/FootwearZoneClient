@@ -38,7 +38,7 @@ import Link from "next/link";
 // Server Component
 export default async function BestSellersServer() {
   // Fetch best seller products from your API
-  const res = await fetch("http://localhost:4000/api/products/best-sellers", {
+  const res = await fetch("https://footwear-api-six.vercel.app/api/products/best-sellers", {
     cache: "no-store", // ensures fresh data on each request
   });
 

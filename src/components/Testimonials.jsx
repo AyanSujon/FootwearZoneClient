@@ -3,7 +3,7 @@
 
 // export default async function TestimonialsSection() {
 //   // Fetch data from your API
-//   const res = await fetch("http://localhost:4000/api/testimonials", {
+//   const res = await fetch("https://footwear-api-six.vercel.app/api/testimonials", {
 //     cache: "no-store",
 //   });
 
@@ -46,7 +46,7 @@ export default function TestimonialsSection() {
   useEffect(() => {
     async function fetchTestimonials() {
       try {
-        const res = await fetch("http://localhost:4000/api/testimonials");
+        const res = await fetch("https://footwear-api-six.vercel.app/api/testimonials");
         const data = await res.json();
         setTestimonials(data);
       } catch (error) {

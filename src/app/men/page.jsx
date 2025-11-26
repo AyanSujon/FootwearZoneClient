@@ -2,9 +2,9 @@ import ProductCard from '@/components/ProductCard'
 import React from 'react'
 
 export default async function Men() {
-  const data = await fetch('http://localhost:4000/api/products?category=men')
+  const data = await fetch('https://footwear-api-six.vercel.app/api/products?category=men')
   const products = await data.json()
-  console.log(products)
+  // console.log(products)
 
 
   return (

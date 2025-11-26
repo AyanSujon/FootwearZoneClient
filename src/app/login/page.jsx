@@ -83,7 +83,7 @@ const Login = () => {
             return;
 
         setLoading(true); // Start loading
-        console.log("Form Submitted:", formData);
+        // console.log("Form Submitted:", formData);
 
 
         // firebase user Create functionalities
@@ -124,7 +124,7 @@ const Login = () => {
 
                 }
                 // Now create user in the database
-                fetch(`http://localhost:4000/api/users`, {
+                fetch(`https://footwear-api-six.vercel.app/api/users`, {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

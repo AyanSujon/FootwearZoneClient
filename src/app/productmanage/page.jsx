@@ -30,7 +30,7 @@ export default function Page() {
 
         const fetchProducts = async () => {
             try {
-                const res = await fetch("http://localhost:4000/api/products");
+                const res = await fetch("https://footwear-api-six.vercel.app/api/products");
                 const data = await res.json();
                 setProducts(data);
             } catch (error) {
@@ -61,7 +61,7 @@ export default function Page() {
 
         if (result.isConfirmed) {
             try {
-                const res = await fetch(`http://localhost:4000/api/products/${id}`, {
+                const res = await fetch(`https://footwear-api-six.vercel.app/api/products/${id}`, {
                     method: "DELETE",
                 });
 

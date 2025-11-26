@@ -28,7 +28,7 @@ export default function EditProductPage() {
     if (!id || !user) return; // wait for id and user
     const fetchProduct = async () => {
       try {
-        const res = await fetch(`http://localhost:4000/api/products/${id}`);
+        const res = await fetch(`https://footwear-api-six.vercel.app/api/products/${id}`);
         const data = await res.json();
 
         if (res.ok) {
@@ -93,7 +93,7 @@ export default function EditProductPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`http://localhost:4000/api/products/${id}`, {
+      const response = await fetch(`https://footwear-api-six.vercel.app/api/products/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

@@ -2,7 +2,7 @@
 // import React from 'react'
 
 // export default async function page() {
-//   const data = await fetch('http://localhost:4000/api/products')
+//   const data = await fetch('https://footwear-api-six.vercel.app/api/products')
 //   const products = await data.json()
 //   console.log(products)
 //   return (
@@ -40,7 +40,7 @@ export default function ProductsPage() {
   const [filteredProducts, setFilteredProducts] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:4000/api/products')
+    fetch('https://footwear-api-six.vercel.app/api/products')
       .then(res => res.json())
       .then(data => setProducts(data));
   }, []);

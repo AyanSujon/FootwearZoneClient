@@ -5,7 +5,7 @@ import { Heart, Star, Eye } from "lucide-react";
 import Link from "next/link";
 
 export default function ProductCard({ product }) {
-  console.log(product)
+  // console.log(product)
   const [selectedSize, setSelectedSize] = useState(null);
   const [selectedColor, setSelectedColor] = useState(null);
   const [wishlist, setWishlist] = useState(false);

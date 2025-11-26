@@ -94,7 +94,7 @@ const Register = () => {
         // Start loading
         setLoading(true);
 
-        console.log("Form Submitted:", formData);
+        // console.log("Form Submitted:", formData);
 
 
         // firebase user Create functionalities
@@ -123,7 +123,7 @@ const Register = () => {
                         }
 
                         // Now create user in the database
-                        fetch(`http://localhost:4000/api/users`, {
+                        fetch(`https://footwear-api-six.vercel.app/api/users`, {
                             method: 'POST',
                             headers: {
                                 'content-type': 'application/json'
@@ -211,7 +211,7 @@ const Register = () => {
 
                 }
                 // Now create user in the database
-                fetch(`http://localhost:4000/api/users`, {
+                fetch(`https://footwear-api-six.vercel.app/api/users`, {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

@@ -10,7 +10,7 @@ import { useRouter } from "next/navigation";
 
 export default function AddProductForm() {
   const { user } = useContext(AuthContext);
-  console.log(user);
+  // console.log(user);
   const router = useRouter();
   const [product, setProduct] = useState({
     title: "",
@@ -65,7 +65,7 @@ export default function AddProductForm() {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:4000/api/products", {
+      const response = await fetch("https://footwear-api-six.vercel.app/api/products", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -74,7 +74,7 @@ export default function AddProductForm() {
       });
 
       const data = await response.json();
-      console.log("After saving data on mongodb: ", data);
+      // console.log("After saving data on mongodb: ", data);
 
       if (response.ok) {
         toast.success(data.message || "Product added successfully!");

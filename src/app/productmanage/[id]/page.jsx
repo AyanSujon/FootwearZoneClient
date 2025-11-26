@@ -19,7 +19,7 @@ export default function ProductStatusPage() {
 
         async function fetchProduct() {
             try {
-                const res = await fetch(`http://localhost:4000/api/products/${id}`);
+                const res = await fetch(`https://footwear-api-six.vercel.app/api/products/${id}`);
                 const data = await res.json();
                 setProduct(data);
                 setLoading(false);
@@ -49,7 +49,7 @@ const handleDelete = async () => {
 
     if (result.isConfirmed) {
         try {
-            const res = await fetch(`http://localhost:4000/api/products/${id}`, {
+            const res = await fetch(`https://footwear-api-six.vercel.app/api/products/${id}`, {
                 method: "DELETE",
             });
 

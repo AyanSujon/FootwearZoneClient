@@ -4,7 +4,7 @@
 
 //   const { ProductID } = await props.params; 
 
-//   const res = await fetch(`http://localhost:4000/api/products/${ProductID}`, {
+//   const res = await fetch(`https://footwear-api-six.vercel.app/api/products/${ProductID}`, {
 //     cache: "no-store",
 //   });
 
@@ -37,7 +37,7 @@ import Link from "next/link";
 export default async function SingleProduct(props) {
   const { ProductID } = await props.params;
 
-  const res = await fetch(`http://localhost:4000/api/products/${ProductID}`, {
+  const res = await fetch(`https://footwear-api-six.vercel.app/api/products/${ProductID}`, {
     cache: "no-store",
   });
 
