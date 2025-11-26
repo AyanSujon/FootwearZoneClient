@@ -9,6 +9,7 @@ import { Eye, Trash, Star } from "lucide-react";
 import { AuthContext } from '@/Context/AuthContext';
 import { useRouter } from "next/navigation";
 import Swal from "sweetalert2";
+import Link from "next/link";
 
 
 
@@ -173,9 +174,9 @@ export default function Page() {
                                 <td>{product.viewCount}</td>
                                 <td>
                                     <div className="flex justify-end gap-2">
-                                        <button className="btn btn-primary btn-sm flex items-center gap-1 text-white">
+                                        <Link href={`/productmanage/${product._id}`} className="btn btn-primary btn-sm flex items-center gap-1 text-white">
                                             <Eye size={15} /> View
-                                        </button>
+                                        </Link>
                                         <button
                                             className="btn bg-red-500 btn-sm flex items-center gap-1 text-white"
                                             onClick={() => handleDelete(product._id)}
