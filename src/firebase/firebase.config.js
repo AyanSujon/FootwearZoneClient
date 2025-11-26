@@ -6,12 +6,20 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyB8JbCqBBuzPsQn6kjGolcqio-BMVa62C8",
-  authDomain: "footwearzone-1835d.firebaseapp.com",
-  projectId: "footwearzone-1835d",
-  storageBucket: "footwearzone-1835d.firebasestorage.app",
-  messagingSenderId: "371252287670",
-  appId: "1:371252287670:web:c1fe958a0b399927a76e17"
+  apiKey: process.env.NEXT_PUBLIC_APIKEY,
+  authDomain: process.env.NEXT_PUBLIC_AUTHDOMAIN,
+  projectId: process.env.NEXT_PUBLIC_PROJECTID,
+  storageBucket: process.env.NEXT_PUBLIC_STORAGEBUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_MESSAGINGSENDERID,
+  appId: process.env.NEXT_PUBLIC_APPID,
+
+  
+  // apiKey: "AIzaSyB8JbCqBBuzPsQn6kjGolcqio-BMVa62C8",
+  // authDomain: "footwearzone-1835d.firebaseapp.com",
+  // projectId: "footwearzone-1835d",
+  // storageBucket: "footwearzone-1835d.firebasestorage.app",
+  // messagingSenderId: "371252287670",
+  // appId: "1:371252287670:web:c1fe958a0b399927a76e17",
 };
 
 // Initialize Firebase
