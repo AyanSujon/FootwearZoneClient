@@ -8,20 +8,69 @@
 
 
 
-Footwear Zone: Client & Server👟 Project OverviewFootwear Zone is a full-stack e-commerce solution dedicated to modern and stylish footwear. This application provides a seamless shopping experience for customers and robust product management tools for administrators.Short DescriptionThis is a comprehensive, responsive e-commerce platform built with Next.js (Client) and a custom API (Server). It features user authentication, category-based product sorting, advanced search filters, and an exclusive admin panel for product management (CRUD operations).🔗 LinksComponentTypeURLLive DemoClienthttps://footwear-zone-client.vercel.app/Backend APIServerhttps://footwear-api-six.vercel.app/Client RepositoryGitHubhttps://github.com/AyanSujon/FootwearZoneClient.gitServer RepositoryGitHubhttps://github.com/AyanSujon/FootwearZoneServer.git🚀 Setup & Installation (Client Side)Follow these steps to get the client-side application running locally.PrerequisitesNode.js (LTS version recommended)npm or yarnInstallation StepsClone the repository:git clone [https://github.com/AyanSujon/FootwearZoneClient.git](https://github.com/AyanSujon/FootwearZoneClient.git)
-cd FootwearZoneClient
-Install dependencies:npm install
-# or
-yarn install
-Configure Environment Variables: Create a .env.local file in the root directory and add your Firebase configuration and API base URL.# Example .env.local content (replace with actual values)
-NEXT_PUBLIC_API_URL=[https://footwear-api-six.vercel.app/](https://footwear-api-six.vercel.app/)
-# ... other necessary environment variables (e.g., Firebase config)
-Run the application:npm run dev
-# or
-yarn dev
-The application will now be running on http://localhost:3000.✨ FeaturesThe Footwear Zone website includes the following core functionalities:User ExperienceAuthentication: Seamless Login/Register functionality using Firebase.Showcases: Dedicated sections for Best Sellers and New Arrivals.Dynamic Content: Dynamic Testimonials to build trust.Engagement: Integrated Newsletter sign-up.Product & NavigationCategory Sorting: All products are easily navigable and sortable by category (Men, Women, Kids).Search & Filter: Powerful search filter by product title for quick product discovery.Admin & Management (Requires Authorization)CRUD Operations: Full Product Management capabilities:Add new productUpdate product detailsDelete productTechnology & UI EnhancementsNotifications: User-friendly feedback via React Toastify for success/error messages.Alerts: Engaging, custom alerts using SweetAlert2 for crucial actions (e.g., delete confirmation).💻 DependenciesThis project relies on the following key dependencies:CategoryDependencyDescriptionFrameworknext, react, react-domNext.js for client-side rendering and routing.AuthenticationfirebaseHandles user authentication and data persistence.UI/Iconslucide-react, react-icons, daisyui, tailwindcssProvides modern components, icons, and utility-first styling.SwiperswiperUsed for creating responsive and dynamic carousels (e.g., in Best Sellers).Feedbackreact-toastify, sweetalert2For enhanced user notifications and custom alerts.Dev Toolbabel-plugin-react-compilerUsed for performance optimization during development.🗺️ Route SummaryRoute NamePathDescriptionExample URLHome Page/Main landing page with featured products and categories.https://footwear-zone-client.vercel.app/Shop Page/shopDisplays all available products.https://footwear-zone-client.vercel.app/shopMen's Collection/menFiltered view of products categorized as Men's.https://footwear-zone-client.vercel.app/menWomen's Collection/womenFiltered view of products categorized as Women's.https://footwear-zone-client.vercel.app/womenKids' Collection/kidsFiltered view of products categorized as Kids'.https://footwear-zone-client.vercel.app/kidsProduct Details/shop/[productId]Detailed view of a single product.https://footwear-zone-client.vercel.app/shop/692479ae0c37c914c549dc05Login Page/loginUser login interface.https://footwear-zone-client.vercel.app/loginRegister Page/registerNew user registration interface.https://footwear-zone-client.vercel.app/registerAdd Product (Admin)/addProductPage for authorized users to add new products.https://footwear-zone-client.vercel.app/addProductProduct Manage/productmanageOverview of all products for admin management.https://footwear-zone-client.vercel.app/productmanageEdit Product/productmanage/[productId]/editAdmin page to edit details of a specific product.https://footwear-zone-client.vercel.app/productmanage/692479ae0c37c914c549dc03/edit
 
+# Footwear Zone
 
+## Project Overview
+**Footwear Zone** is a modern, responsive e-commerce website for footwear enthusiasts. It allows users to browse products by category, view product details, and manage products (admin features). The website features a dynamic interface with React, Next.js, and Tailwind CSS, along with Firebase authentication and a fully functional backend API.
+
+---
+
+## Project Short Description
+Footwear Zone is an online footwear store built with **Next.js**, **React**, **Tailwind CSS**, and **Firebase**. It offers a seamless shopping experience with features like dynamic testimonials, product search, category sorting, and admin functionalities including product management.
+
+---
+
+## Live Demo & GitHub Links
+- **Live Site:** [https://footwear-zone-client.vercel.app/](https://footwear-zone-client.vercel.app/)  
+- **Client Repository:** [GitHub Client Repo](https://github.com/AyanSujon/FootwearZoneClient.git)  
+- **Server Repository:** [GitHub Server Repo](https://github.com/AyanSujon/FootwearZoneServer.git)  
+- **API Link:** [https://footwear-api-six.vercel.app/](https://footwear-api-six.vercel.app/)  
+
+---
+
+## Features
+- User Authentication (Login/Register)
+- Best Sellers & New Arrivals
+- Dynamic Testimonials
+- Newsletter Subscription
+- Product Listing & Sorting by Category
+- Search Filter by Product Title
+- Admin Features: Add, Delete, Update, and Manage Products
+- React Toastify notifications
+- SweetAlert2 confirmations
+- Responsive and modern UI design
+
+---
+
+## Route Summary
+- **Home:** [https://footwear-zone-client.vercel.app/](https://footwear-zone-client.vercel.app/)  
+- **Shop Page:** [https://footwear-zone-client.vercel.app/shop](https://footwear-zone-client.vercel.app/shop)  
+- **Men Collection:** [https://footwear-zone-client.vercel.app/men](https://footwear-zone-client.vercel.app/men)  
+- **Women Collection:** [https://footwear-zone-client.vercel.app/women](https://footwear-zone-client.vercel.app/women)  
+- **Kids Collection:** [https://footwear-zone-client.vercel.app/kids](https://footwear-zone-client.vercel.app/kids)  
+- **View Product:** [https://footwear-zone-client.vercel.app/shop/692479ae0c37c914c549dc05](https://footwear-zone-client.vercel.app/shop/692479ae0c37c914c549dc05)  
+- **Login Page:** [https://footwear-zone-client.vercel.app/login](https://footwear-zone-client.vercel.app/login)  
+- **Register Page:** [https://footwear-zone-client.vercel.app/register](https://footwear-zone-client.vercel.app/register)  
+- **Add Product Page:** [https://footwear-zone-client.vercel.app/addProduct](https://footwear-zone-client.vercel.app/addProduct)  
+- **Product Manage Page:** [https://footwear-zone-client.vercel.app/productmanage](https://footwear-zone-client.vercel.app/productmanage)  
+- **Manage Product by ID (Admin):** [https://footwear-zone-client.vercel.app/productmanage/692479ae0c37c914c549dc03](https://footwear-zone-client.vercel.app/productmanage/692479ae0c37c914c549dc03)  
+- **Edit Product by ID:** [https://footwear-zone-client.vercel.app/productmanage/692479ae0c37c914c549dc03/edit](https://footwear-zone-client.vercel.app/productmanage/692479ae0c37c914c549dc03/edit)  
+
+---
+
+## Setup & Installation
+
+### Prerequisites
+- Node.js (v18+ recommended)
+- npm or yarn
+- Git
+
+### Installation Steps
+1. Clone the client repository:
+   ```bash
+   git clone https://github.com/AyanSujon/FootwearZoneClient.git
+   cd FootwearZoneClient
 
 
 ---
