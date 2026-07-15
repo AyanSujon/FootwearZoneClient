@@ -7,6 +7,10 @@
 
 ---
 
+<img width="1351" height="597" alt="FootWear" src="https://github.com/user-attachments/assets/3fb692f4-f8b2-4824-aa01-d6b7ba2a9ac5" />
+
+---
+
 ## Project Short Description
 Footwear Zone is an online footwear store built with **Next.js**, **React**, **Tailwind CSS**, and **Firebase**. It offers a seamless shopping experience with features like dynamic testimonials, product search, category sorting, and admin functionalities including product management.
 
